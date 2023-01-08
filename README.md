@@ -35,5 +35,6 @@ Es la computadora la que adivina, se juega mediante la consola también.
 
 # Youtube Video 
 Explico en este video como usar la interfaz para probar el codigo
+[![Alt text](https://img.youtube.com/vi/vWuLeT9IcCg/0.jpg)](https://www.youtube.com/watch?v=vWuLeT9IcCg)
 
 
