@@ -36,6 +36,6 @@ Es la computadora la que adivina, se juega mediante la consola también.
 # Youtube Video 
 Explico en este video como usar la interfaz para probar el codigo
 <p align= "center">
-  [![Alt text](https://img.youtube.com/vi/vWuLeT9IcCg/0.jpg)](https://www.youtube.com/watch?v=vWuLeT9IcCg)
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/vWuLeT9IcCg?start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </p>
 
