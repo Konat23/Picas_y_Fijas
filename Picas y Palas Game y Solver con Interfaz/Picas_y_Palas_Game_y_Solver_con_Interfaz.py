@@ -757,25 +757,25 @@ def isplayerguessing():
         Numero_user.delete(0, 'end') #Eliminar texto del entry 
         #print("Se obtuvo: ", Try_Num)
         score=score_Picas_Palas_v0(Master_Num,Try_Num)
-        Numero=Label(playerguessframe2, text=score[0])
+        Numero=Label(playerguessframe2, font=("Consolas",15), padx=20, text=score[0])
         Numero.grid(column=0, row=intentos+1)
-        Picas=Label(playerguessframe2, text=score[1])
+        Picas=Label(playerguessframe2, font=("Consolas",15), padx=20, text=score[1])
         Picas.grid(column=1, row=intentos+1)
-        Palas=Label(playerguessframe2, text=score[2])
+        Palas=Label(playerguessframe2, font=("Consolas",15), padx=20, text=score[2])
         Palas.grid(column=2, row=intentos+1)
         
         if Validar_Numero(Try_Num,4)==False: # si no es valido lo adiverte al usuario
             Numero.configure(bg="red")
-            Picas.configure(bg="red",text="x")
-            Palas.configure(bg="red",text="x")
-            Label(playerguessframe2,text="Numero invalido").grid(column=3, row=intentos+1)
+            Picas.configure(bg="red",text="x", font=("Consolas",15), padx=20)
+            Palas.configure(bg="red",text="x", font=("Consolas",15), padx=20)
+            Label(playerguessframe2,text="Número invalido", font=("Consolas",15), padx=20).grid(column=3, row=intentos+1)
             return
             
         if score[2]==4: #Gano el juego
-            Numero.configure(bg="green")
-            Picas.configure(bg="green")
-            Palas.configure(bg="green")
-            Label(playerguessframe2,text="Correcto!").grid(column=3, row=intentos+1)
+            Numero.configure(bg="green", font=("Consolas",15), padx=20)
+            Picas.configure(bg="green", font=("Consolas",15), padx=20)
+            Palas.configure(bg="green", font=("Consolas",15), padx=20)
+            Label(playerguessframe2,text="Correcto!", font=("Consolas",15), padx=20).grid(column=3, row=intentos+1)
             Comprobarbutton.destroy()
             Rendirsebutton.destroy()
     
@@ -783,13 +783,13 @@ def isplayerguessing():
         global intentos
         intentos+=1
         score=score_Picas_Palas_v0(Master_Num,Master_Num)
-        Numero=Label(playerguessframe2, text=Master_Num, bg="yellow")
+        Numero=Label(playerguessframe2, text=Master_Num, bg="yellow", font=("Consolas",15), padx=20)
         Numero.grid(column=0, row=intentos+1)
-        Picas=Label(playerguessframe2, text=score[1], bg="yellow")
+        Picas=Label(playerguessframe2, text=score[1], bg="yellow", font=("Consolas",15), padx=20)
         Picas.grid(column=1, row=intentos+1)
-        Palas=Label(playerguessframe2, text=score[2], bg="yellow")
+        Palas=Label(playerguessframe2, text=score[2], bg="yellow", font=("Consolas",15), padx=20)
         Palas.grid(column=2, row=intentos+1)
-        Label(playerguessframe2,text="Respuesta").grid(column=3, row=intentos+1)
+        Label(playerguessframe2,text="Respuesta", font=("Consolas",15), padx=20).grid(column=3, row=intentos+1)
         Comprobarbutton.destroy()
         Rendirsebutton.destroy()
     def codigobotonresetear():
@@ -810,36 +810,36 @@ def isplayerguessing():
     playerguessframe.config(bg="white", width=500,height=500) #la riz se adaptara al frame     
 
     #Entrada de texto
-    Label(playerguessframe, text="Por favor ingrese un número de 4 cifras: ",bg="white").pack()
+    Label(playerguessframe, text="Por favor ingrese un número de 4 cifras: ", font=("Consolas",15), padx=30,bg="white").pack()
     #myLable.place(anchor=N)
 
     #Try_Num=StringVar()
     #Entrada del usuario
-    Numero_user=Entry(playerguessframe,fg="red")
+    Numero_user=Entry(playerguessframe, font=("Consolas",15))
     Numero_user.pack()
     
     #Botones de juego
-    Buttons=Frame(playerguessframe,bg="white",pady=5)
+    Buttons=Frame(playerguessframe,bg="white",pady=15)
     Buttons.pack()
     
     #Numero_user.bind("<Return>",codigobotoncomprobar)    
-    Comprobarbutton=Button(Buttons, text="Comprobar",command=codigobotoncomprobar)
+    Comprobarbutton=Button(Buttons, text="Comprobar", font=("Consolas",15), padx=10,command=codigobotoncomprobar)
     Comprobarbutton.grid(column=0, row=0)
-    Rendirsebutton=Button(Buttons, text="Rendirse",command=codigobotonrendirse)
+    Rendirsebutton=Button(Buttons, text="Rendirse", font=("Consolas",15), padx=10,command=codigobotonrendirse)
     Rendirsebutton.grid(column=1, row=0)
-    Resetearbutton=Button(Buttons, text="Resetear",command=codigobotonresetear)
+    Resetearbutton=Button(Buttons, text="Resetear", font=("Consolas",15), padx=10,command=codigobotonresetear)
     Resetearbutton.grid(column=2, row=0)
     
     #####RESULTADO##########
-    Label(playerguessframe, text="RESULTADO: ",bg="white").pack()
+    Label(playerguessframe, text="RESULTADO: ", font=("Consolas",15),bg="white").pack()
 
     # otro frame para los resultados
     playerguessframe2=Frame(playerguessMainframe)
     playerguessframe2.pack(fill="x")
 
-    label=Label(playerguessframe2, text="Numero").grid(column=0, row=0)
-    label=Label(playerguessframe2, text="Picas").grid(column=1, row=0)
-    label=Label(playerguessframe2, text="Palas").grid(column=2, row=0)
+    label=Label(playerguessframe2, text="Número", font=("Consolas",15), padx=30).grid(column=0, row=0)
+    label=Label(playerguessframe2, text="Picas", font=("Consolas",15), padx=30).grid(column=1, row=0)
+    label=Label(playerguessframe2, text="Palas", font=("Consolas",15), padx=30).grid(column=2, row=0)
     
     #Frame para botones finales
     playerguessframefinal=Frame(playerguessMainframe,bg="white", pady=5)
@@ -849,7 +849,7 @@ def isplayerguessing():
         menucreate()
         
     #Boton de regresar al menu    
-    Button(playerguessframefinal,text="Menú Principal",command=goMenu).pack()
+    Button(playerguessframefinal,text="Menú Principal", font=("Consolas",15), padx=15,command=goMenu).pack()
 
 
 ########################################################
@@ -891,16 +891,16 @@ def ispcguessing():
             print("Se obtuvo: Picas:", Try_pic, "Palas: ", Try_pal)
             
             #Modificar Linea anterior asi que #CREA UNA LINEA DE LABELS Y LAS UBICA DONDE VAN
-            Numero=Label(tablaframe, text=Try_Num_global.get())
+            Numero=Label(tablaframe, font=("Consolas",15),text=Try_Num_global.get())
             Numero.grid(column=0, row=intentos)
-            picas=Label(tablaframe, text=Try_pic)
+            picas=Label(tablaframe, font=("Consolas",15), text=Try_pic)
             picas.grid(column=1, row=intentos)
-            palas=Label(tablaframe, text=Try_pal)
+            palas=Label(tablaframe, font=("Consolas",15), text=Try_pal)
             palas.grid(column=2, row=intentos)
             
             
             #MODIFICA LA LINEA DE TRABAJO         
-            Numero=Label(tablaframe, textvariable=Try_Num_global)#Esta se crea
+            Numero=Label(tablaframe,font=("Consolas",15), textvariable=Try_Num_global)#Esta se crea
             Numero.grid(column=0, row=intentos+1) 
             picasEntry.grid(column=1, row=intentos + 1) #Las demas se modifican
             palasEntry.grid(column=2, row=intentos + 1)
@@ -925,21 +925,21 @@ def ispcguessing():
         intentos=0
         EmpezarButton.destroy() #eliminar el boton de empezar
         
-        label=Label(tablaframe, text="Numero").grid(column=0, row=0)
-        label=Label(tablaframe, text="Picas").grid(column=1, row=0)
-        label=Label(tablaframe, text="Palas").grid(column=2, row=0)
+        label=Label(tablaframe, text="Número",font=("Consolas",15), padx=30).grid(column=0, row=0)
+        label=Label(tablaframe, text="Picas",font=("Consolas",15), padx=30).grid(column=1, row=0)
+        label=Label(tablaframe, text="Palas",font=("Consolas",15), padx=30).grid(column=2, row=0)
         
-        Numero=Label(tablaframe, textvariable=Try_Num_global)
+        Numero=Label(tablaframe,font=("Consolas",15), textvariable=Try_Num_global)
         Numero.grid(column=0, row=1)
-        picasEntry=Entry(tablaframe)
+        picasEntry=Entry(tablaframe,font=("Consolas",15),width=7)
         picasEntry.grid(column=1, row=1)  
-        palasEntry=Entry(tablaframe)
+        palasEntry=Entry(tablaframe,font=("Consolas",15),width=7)
         palasEntry.grid(column=2, row=1)
         
-        EnviarButton=Button(tablaframe,text="Enviar", command=lambda: [addnumbers(),var.set(1-var.get())])        
+        EnviarButton=Button(tablaframe,text="Enviar", font=("Consolas",15),padx=15, command=lambda: [addnumbers(),var.set(1-var.get())])        
         EnviarButton.grid(column=3, row=1)
         
-        ResetButton=Button(pcguessframe,text="Resetear",command=codigobotonresetear)
+        ResetButton=Button(pcguessframe,text="Resetear", font=("Consolas",15),command=codigobotonresetear)
         ResetButton.pack()        
         
         
@@ -955,7 +955,7 @@ def ispcguessing():
         palasEntry.destroy()
         EnviarButton.destroy()
         
-        RespuestaLabel=Label(pcguessframe, text=("Respuesta: "+respuesta[0]) )        
+        RespuestaLabel=Label(pcguessframe, text=("Respuesta: "+respuesta[0]),font=("Consolas", 15) )        
         RespuestaLabel.pack()
         
         
@@ -964,7 +964,7 @@ def ispcguessing():
         
     
     MenuFrame.destroy() #Quitar menu cuando se abra este modo de juego
-    pcguessMainframe=Frame(raiz,bg="white") #frame principal del juego
+    pcguessMainframe=Frame(raiz,bg="white",pady=5, padx=5) #frame principal del juego
     pcguessMainframe.pack(fill="x")
     
     pcguessframe=Frame(pcguessMainframe) # Creamos un frame
@@ -976,14 +976,14 @@ def ispcguessing():
     pcguessframe.config(bg="white", width=500,height=500) #la riz se adaptara al frame     
 
     #Entrada de texto
-    Label(pcguessframe, text="Piensa en un numero de 4 cifras diferentes. intentare adivinarlo",bg="white").pack()
+    Label(pcguessframe, text="Piensa en un número de 4 cifras diferentes. \n Intentare adivinarlo",bg="white",font=("Consolas", 15),pady=10, padx=25).pack()
     
         
-    EmpezarButton=Button(pcguessframe,text="Empezar",command=empezarbutton)    
+    EmpezarButton=Button(pcguessframe,text="Empezar",font=("Consolas", 15),command=empezarbutton)    
     EmpezarButton.pack()
     tablaframe=Frame(pcguessframe)
     tablaframe.pack(fill="x")
-    MenuButton=Button(pcguessframe,text="Menú Principal",command=goMenu)
+    MenuButton=Button(pcguessframe,text="Menú Principal",font=("Consolas", 15), padx=15,command=goMenu)
     MenuButton.pack()
     
     
@@ -993,10 +993,10 @@ def ispcguessing():
 
 def menucreate():
     global MenuFrame
-    MenuFrame=Frame(raiz)
+    MenuFrame=Frame(raiz,pady=25,bg="white",padx=25)
     MenuFrame.pack(fill="x")
-    Button(MenuFrame, text="Player guess the Number",command=isplayerguessing).pack()
-    Button(MenuFrame, text="PC guess the Number",command=ispcguessing).pack()
+    Button(MenuFrame, text="El jugador adivina el número",font=("Consolas", 20),command=isplayerguessing).pack()
+    Button(MenuFrame, text="El PC adivina el número",font=("Consolas", 20),command=ispcguessing).pack()
     
 
 intentos=0                  
@@ -1006,8 +1006,8 @@ raiz.title("Picas y Palas - El juego")
 #raiz.resizable(0,0) #impiide cambiar el tamaño 
 #raiz.geometry("500x500")
 raiz.iconbitmap("imagenes/logo.ico") #logo de arriba a la izquierda 
-raiz.config(bg="white")
-myLable=Label(raiz, text="PICAS Y PALAS",font=(18),bg="white")
+raiz.config(bg="black",pady=5,padx=5)
+myLable=Label(raiz, text="PICAS Y PALAS",font=("Consolas",30),pady=20, width=20,bg="white")
 myLable.pack(fill="x")
 
 
