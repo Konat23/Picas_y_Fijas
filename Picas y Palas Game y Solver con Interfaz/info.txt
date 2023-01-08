@@ -1,0 +1,4 @@
+Este codigo tiene implementada las dos partes:
+-Cuando el jugador adivina el numero.
+-Cuando el Computado adivina el numero.
+Ambos desde una interfaz usando tkinter
